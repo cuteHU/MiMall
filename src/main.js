@@ -14,6 +14,7 @@ if (mock) {
     require('./mock/api')
 }
 
+axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 8000;
 
 // 错误拦截
