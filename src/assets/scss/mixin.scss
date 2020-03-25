@@ -1,0 +1,14 @@
+@mixin flex($hov:space-between, $col:center) {
+    display: flex;
+    justify-content: $hov;
+    align-items: $col;
+}
+
+@mixin bgImg($w:0, $h:0, $img:'', $size:contain) {
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    margin-right: 4px;
+    background: url("/imgs/icon-cart-checked.png") no-repeat center;
+    background-size: contain;
+}

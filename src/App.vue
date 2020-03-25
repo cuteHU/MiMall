@@ -11,19 +11,15 @@ export default {
   },
   data () {
     return {
-      res: {}
+
     }
   },
   mounted () {
-    // this.axios.get('/mock/user/login.json').then((result) => {
-    //   this.res = result
-    // });
-    this.axios.get('/user/login').then((result) => {
-      this.res = result;
-    });
+
   },
 }
 </script>
 
 <style>
+@import "./assets/scss/reset.scss";
 </style>
