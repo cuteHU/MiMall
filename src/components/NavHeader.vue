@@ -24,7 +24,21 @@
         <div class="header-menu">
           <div class="item-menu">
             <span>小米手机</span>
-            <div class="children"></div>
+            <div class="children">
+              <ul>
+                <li class="product">
+                  <a href=""
+                     target="_blank">
+                    <div class="pro-img">
+                      <img src="imgs/nav-img/nav-1.png"
+                           alt="">
+                    </div>
+                    <div class="pro-name">小米9</div>
+                    <div class="pro-price">2999元</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="item-menu">
             <span>RedMi红米</span>
@@ -56,6 +70,7 @@ export default {
 <style lang="scss">
 @import "../assets/scss/base.scss";
 @import "../assets/scss/mixin.scss";
+@import "../assets/scss/config.scss";
 .header {
   .nav-topbar {
     height: 39px;
@@ -76,18 +91,14 @@ export default {
         color: #fff;
         .icon-cart {
           @include bgImg(16px, 12px, "/imgs/icon-cart-checked.png");
-          // display: inline-block;
-          // width: 16px;
-          // height: 12px;
           margin-right: 4px;
-          // background: url("/imgs/icon-cart-checked.png") no-repeat center;
-          // background-size: contain;
         }
       }
     }
   }
   .nav-header {
     .container {
+      position: relative;
       height: 112px;
       @include flex();
       .header-logo {
@@ -101,20 +112,12 @@ export default {
           height: 55px;
           &:before {
             content: " ";
-            display: inline-block;
-            width: 55px;
-            height: 55px;
-            background: url("/imgs/mi-logo.png") no-repeat center;
-            background-size: contain;
+            @include bgImg(55px, 55px, "/imgs/mi-logo.png", 55px);
             transition: margin 0.2s;
           }
           &:after {
             content: " ";
-            display: inline-block;
-            width: 55px;
-            height: 55px;
-            background: url("/imgs/mi-home.png") no-repeat center;
-            background-size: contain;
+            @include bgImg(55px, 55px, "/imgs/mi-home.png", 55px);
           }
           &:hover:before {
             margin-left: -55px;
@@ -137,6 +140,34 @@ export default {
             cursor: pointer;
           }
           &:hover {
+            color: $colorA;
+            .children {
+              height: 220px;
+            }
+          }
+          .children {
+            position: absolute;
+            top: 112px;
+            left: 0;
+            width: 1226px;
+            border-top: 1px solid #e5e5e5;
+            box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
+            .product {
+              float: left;
+              width: 16.6%;
+              height: 220px;
+              a {
+                display: inline-block;
+              }
+              img {
+                width: auto;
+                height: 110px;
+                margin-top: 26px;
+              }
+              .pro-img {
+                height: 137px;
+              }
+            }
           }
         }
       }
@@ -156,11 +187,7 @@ export default {
             padding-left: 14px;
           }
           a {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            background: url("/imgs/icon-search.png") no-repeat center;
-            background-size: contain;
+            @include bgImg(18px, 18px, "/imgs/icon-search.png");
             margin-left: 17px;
           }
         }
